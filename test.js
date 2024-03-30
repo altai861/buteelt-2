@@ -24,9 +24,12 @@ let NiitOyutniiTsag = 0
 let NiitDurtaiTsag = 0
 let NiitDadlagiinTsag = 0;
 let grade = 1;
+let thisYearEndDate = startDate;
+let thisYearStartDate = startDate;
+thisYearEndDate.setFullYear(currentDate.getFullYear() + 1, 5, 1);
 while(currentDate <= endDate){
     if(currentDate.getFullYear() <= endDate.getFullYear() - newStudent.uniYear){ // school years
-        let replica = new Date(thisYearEndDate)
+        let replica = thisYearEndDate
         replica.setDate(thisYearEndDate.getDate() - thisYearEndDate.getDay())
         if(thisYearStartDate.getDay() === 5 || thisYearStartDate.getDay() === 6){
             thisYearStartDate.setFullYear(thisYearStartDate.getFullYear(), thisYearStartDate.getMonth(), thisYearStartDate.getDate() + 7 - thisYearStartDate.getDay())
@@ -40,7 +43,7 @@ while(currentDate <= endDate){
             else if (grade < 13 ){
                 NiitDundSurguuliinTsag += 6 * newStudent.schoolDurationAhlah * 60 * (newStudent.workDays-currentDate.getDay());
             }
-        } else if ((thisYearEndDate.getDay() != 5 || thisYearEndDate.getDay() != 6 || thisYearEndDate.getDay() != 4) && currentDate === replica){
+        } else if ((thisYearEndDate.getDay() != 5 || thisYearEndDate.getDay() != 6) && currentDate === replica){
             if (grade < 6 && grade > 0){ 
                 NiitDundSurguuliinTsag += 4 * newStudent.schoolDurationBaga * 60 * thisYearEndDate.getDay();
             }
@@ -56,9 +59,11 @@ while(currentDate <= endDate){
             }
         }
         if (currentDate === thisYearStartDate) currentDate.setDate(currentDate.getDate() + 7 - thisYearStartDate.getDay())
-        else if(currentDate >= thisYearEndDate) {
-            currentDate.setFullYear(currentDate.getFullYear(), 9, 1);
+        else if(currentDate === replica) {
+            currentDate.setFullYear(currentDate.getFullYear(), 8, 1);
             grade++;
+            thisYearEndDate.setFullYear(currentDate.getFullYear() + 1, 5, 1);
+            startDate.setFullYear(currentDate.getFullYear(), 8, 1);
         } else currentDate.setDate(currentDate.getDate + 7)
     }
 }
