@@ -34,28 +34,42 @@ console.log("2006 Interest: ", newStudentInterest)
 console.log("1978 Interest: ", oldStudentInterest)
 console.log("1978 Intern proportion", oldIntern)
 console.log("2006 Intern proportion", newIntern.internshipProportion)
+console.log("days: ", newStudent.d);
 
-
+const oldDundDays = document.getElementById("oldDundDays")
+const oldDeedDays = document.getElementById("oldDeedDays")
 const oldDund = document.getElementById("oldDund")
 const oldDeed = document.getElementById("oldDeed")
 const oldNiit = document.getElementById("oldNiit")
 const oldInt = document.getElementById("oldInt")
 const oldDad = document.getElementById("oldDad")
+const oldDadPercent = document.getElementById("oldDadPercent")
+
+
+const newDundDays = document.getElementById("newDundDays")
+const newDeedDays = document.getElementById("newDeedDays")
 const newDund = document.getElementById("newDund")
 const newDeed = document.getElementById("newDeed")
 const newNiit = document.getElementById("newNiit")
 const newInt = document.getElementById("newInt")
 const newDad = document.getElementById("newDad")
+const newDadPercent = document.getElementById("newDadPercent")
 
 
+oldDundDays.innerText = oldStudent.dundSurguuliDays + " өдөр"
+oldDeedDays.innerText = oldStudent.deedSurguuliDays + " өдөр"
 oldDund.innerText = formatHours(oldStudent.dund)
 oldDeed.innerText = formatHours(oldStudent.deed)
 oldNiit.innerText = formatHours(oldStudent.niit)
 oldInt.innerText = formatHours(oldStudentInterest.niitSonirhson)
 oldDad.innerText = formatHours(oldIntern.internDuration)
+oldDadPercent.innerText = oldIntern.internshipProportion + "%"
 
+newDundDays.innerText = newStudent.dundSurguuliDays + " өдөр"
+newDeedDays.innerText = newStudent.deedSurguuliDays + " өдөр"
 newDund.innerText = formatHours(newStudent.dund)
 newDeed.innerText = formatHours(newStudent.deed)
 newNiit.innerText = formatHours(newStudent.niit)
 newInt.innerText = formatHours(newStudentInterest.niitSonirhson)
 newDad.innerText = formatHours(newIntern.internDuration)
+newDadPercent.innerText = newIntern.internshipProportion + "%"

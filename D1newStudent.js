@@ -13,6 +13,9 @@ function findNewStudent() {
         schoolDurationAhlah: 35,
         uniDuration: 90
     }
+
+    let dundSurguuliDays = 0
+    let deedSurguuliDays = 0
     
     
     let startDate = new Date(newStudent.startYear.toString() + "-09-01")
@@ -36,14 +39,17 @@ function findNewStudent() {
         if (grade >= 1 && grade <= 5) {
             if (heddehOdor !== 7 && heddehOdor !== 6) {
                 NiitDundSurguuliinTsag += 4 * 30
+                dundSurguuliDays += 1
             }
         } else if (grade >= 6 && grade <= 12) {
             if (heddehOdor !== 7 && heddehOdor !== 6) {
                 NiitDundSurguuliinTsag += 6 * 35
+                dundSurguuliDays += 1
             }
         } else {
             if (heddehOdor !== 7 && heddehOdor !== 6) {
                 NiitOyutniiTsag += 3 * 90
+                deedSurguuliDays += 1
             }
         }
         
@@ -64,8 +70,11 @@ function findNewStudent() {
     return {
         "niit": NiitSuraltsahTsag / 60,
         "dund": NiitDundSurguuliinTsag / 60,
-        "deed": NiitOyutniiTsag / 60
+        "deed": NiitOyutniiTsag / 60,
+        "dundSurguuliDays": dundSurguuliDays,
+        "deedSurguuliDays": deedSurguuliDays
     }
 }
+
 
 export default findNewStudent;
