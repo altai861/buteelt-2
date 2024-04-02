@@ -49,7 +49,7 @@ function findOldStudent() {
         
     
     
-        if (currentDate.getMonth() === 5 && currentDate.getDate() === 1) {
+        if (currentDate.getMonth() === 5) {
             // Skip summer months by adding three months (going to September 1st)
             currentDate.setMonth(currentDate.getMonth() + 3);
             grade += 1

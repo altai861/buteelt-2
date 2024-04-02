@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+table {
+    margin: 0 auto; /* Center the table horizontally */
+    width: 80%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td {
+    padding: 10px;
+}
+
+#header-row {
+    background-color: antiquewhite;
+}
